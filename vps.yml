@@ -1,0 +1,8 @@
+---
+- name: "Setting up default configuration."
+  hosts: local
+  vars_files:
+    - vars.yml
+  roles:
+    - ssh
+
