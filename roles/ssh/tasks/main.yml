@@ -1,0 +1,9 @@
+---
+- import_tasks: sshd_packages.yml
+- import_tasks: key_cleanup.yml
+- import_tasks: sshd_config.yml
+- import_tasks: sshd_service.yml
+- name: Create ssh group
+  group:
+    git: 22
+    name: _ssh

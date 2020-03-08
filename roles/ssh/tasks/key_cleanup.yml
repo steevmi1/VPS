@@ -1,0 +1,26 @@
+---
+- name: Clean up invalid ssh key files
+  file:
+    dest: /etc/ssh/ssh_host_ecdsa_key.pub
+    state: absent
+  tags: sshd
+- file:
+    dest: /etc/ssh/ssh_host_ecdsa_key
+    state: absent
+  tags: sshd
+- file:
+    dest: /etc/ssh/ssh_host_dsa_key.pub
+    state: absent
+  tags: sshd
+- file:
+    dest: /etc/ssh/ssh_host_dsa_key
+    state: absent
+  tags: sshd
+- file:
+    dest: /etc/ssh/ssh_host_key
+    state: absent
+  tags: sshd
+- file:
+    dest: /etc/ssh/ssh_host_key.pub
+    state: absent
+  tags: sshd

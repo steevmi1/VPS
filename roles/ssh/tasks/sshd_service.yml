@@ -1,0 +1,6 @@
+---
+- name: sshd service is enabled and running
+  service:
+    name: sshd
+    enabled: true
+    state: started

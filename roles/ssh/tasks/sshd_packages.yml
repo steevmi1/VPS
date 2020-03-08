@@ -1,0 +1,11 @@
+---
+- name: Make sure that all the necessary packages are installed.
+  yum:
+    name: "{{ packages }}"
+  when: ansible_facts['os_family'] == "RedHat"
+  vars:
+    packages:
+      - openssh
+      - openssh-server
+      - openssh-clients
+  tags: sshd
