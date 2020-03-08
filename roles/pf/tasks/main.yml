@@ -1,2 +1,8 @@
 ---
 # tasks file for pf
+
+- name: generate pf.conf
+  template:
+    src: pf.conf.j2
+    dest: /etc/pf.conf
+  notify: reload pf
