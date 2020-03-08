@@ -11,7 +11,6 @@ open_udp_ports = "{ {{ open_udp_ports | join(', ') }} }"
 
 table <spamd-white> persist
 table <bigmailers> persist
-table <nospamd> persist file "/etc/mail/whitelist.txt"
 
 set skip on lo
 
