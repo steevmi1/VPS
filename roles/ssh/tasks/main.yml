@@ -5,5 +5,5 @@
 - import_tasks: sshd_service.yml
 - name: Create ssh group
   group:
-    git: 22
+    gid: 22
     name: _ssh
