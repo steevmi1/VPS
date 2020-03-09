@@ -1,4 +1,4 @@
-inbound_tcp = "{ http, https, submission, imaps, domain }"
+inbound_tcp = "{ http, https, submission, imaps, domain {{ sshd_port }} }"
 inbound_udp = "{ domain }"
 
 {% if open_ports %}
