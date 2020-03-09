@@ -1,2 +1,10 @@
 ---
-sshd_port: 11522
+ntp_servers:                # Upstream NTP servers
+  - 0.us.pool.ntp.org       #   Your hosting provider may provide closer NTP servers in their datacenter.
+  - 1.us.pool.ntp.org       #   Otherwise, these are fine if you are in the USA.
+  - 2.us.pool.ntp.org
+  - 3.us.pool.ntp.org
+
+sshd_port: 11522            # SSH port. Don't choose 22 unless you like being hammered 24/7 by botnets!
+
+timezone: America/New_York  # your timezone
