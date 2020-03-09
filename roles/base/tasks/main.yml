@@ -1,0 +1,12 @@
+---
+# tasks file for base
+- name: disable sndiod
+  service:
+    name: sndiod
+    enabled: no
+    state: stopped
+
+- name: set localhost MOTD
+  template:
+    src: motd.j2
+    dest: /etc/motd
