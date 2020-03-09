@@ -1,0 +1,12 @@
+---
+# tasks file for ntp
+#
+- name: set timezone
+  timezone:
+    name: '{{ timezone }}'
+
+- name: generate ntpd.conf
+  template:
+    src: ntpd.conf.j2
+    dest: /etc/ntpd.conf
+  notify: restart ntpd
