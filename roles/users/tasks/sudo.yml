@@ -1,0 +1,9 @@
+---
+- name: Passwordless sudo for bt-admins group
+  template:
+    src: doas.conf.j2
+    dest: /etc/doas.conf
+    backup: yes
+    owner: 0
+    group: 0
+    mode: 0644

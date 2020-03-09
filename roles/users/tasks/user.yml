@@ -1,0 +1,20 @@
+---
+  - name: Add my user
+    user:
+      name: "{{ item.user_name }}"
+      shell: "{{ item.shell }}"
+      groups: wheel
+      append: yes
+      generate_ssh_key: yes
+      ssh_key_bits: 4096
+      state: present
+    with_items:
+      - "{{ users }}"
+
+  - name: Add individual users' ssh key
+    authorized_key:
+      user: "{{ item.user_name }}"
+      key: "{{ lookup('file', 'files/' + item.user_name + '.pub') }}"
+      state: present
+    with_items:
+      - "{{ users }}"
