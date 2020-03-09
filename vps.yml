@@ -4,6 +4,7 @@
   vars_files:
     - vars.yml
   roles:
+    - base
     - ntp
     - pf
     - ssh
